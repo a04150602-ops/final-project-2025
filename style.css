@@ -1,0 +1,378 @@
+/* 貼在 style.css 裡 */
+body {
+    font-family: "Times New Roman", Times, serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    line-height: 1.2;
+}
+
+.nav-menu a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 18px;
+    color: #6a85b6; 
+    background-color: #efeff5;
+    padding: 8px 35px;
+    border-radius: 50px;
+    margin-left: 15px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15), 
+                -1px -1px 2px rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+.nav-menu a:hover {
+    
+    background-color: #e0e0e8;
+    transform: translateY(-2px);
+}
+
+/* --- 主視覺區塊 (Hero Section) --- */
+.hero-section {
+    /* 設定高度 */
+    height: 400px;
+    
+    /* 漸層背景：模仿圖片的淡紫藍色光澤 */
+    background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+    
+    /* 讓文字垂直與水平置中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-section h1 {
+    /* 文字樣式 */
+    font-size: 48px;            /* 字體加大 */
+    color: white;               /* 白色文字 */
+    text-transform: uppercase;  /* 自動變大寫 */
+    letter-spacing: 5px;        /* 字距拉寬，更有質感 */
+    
+    /* 文字陰影：讓白字在淺色背景上浮現出來 */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    margin: 0;                  /* 歸零，避免被預設邊距影響 */
+}
+
+/* --- 個人簡介區塊 (Profile Section) --- */
+.profile-section {
+    /* 背景：模仿圖片的粉紅到粉藍漸層 */
+    background: linear-gradient(90deg, #fff0f5 0%, #e6f7ff 100%);
+    padding: 80px 20px; /* 上下留白多一點，看起來比較高級 */
+    
+    /* 讓內容置中 */
+    display: flex;
+    justify-content: center;
+}
+
+.profile-container {
+    display: flex;       /* 左右排版 */
+    align-items: center; /* 垂直置中對齊 */
+    gap: 60px;           /* 照片跟文字中間的距離 */
+    max-width: 900px;    /* 限制最大寬度，避免在大螢幕太散 */
+}
+
+/* --- 照片樣式 (膠囊形狀) --- */
+.profile-image img {
+    width: 350px;       /* 照片寬度 */
+    height: 220px;      /* 照片高度 */
+    object-fit: cover;  /* 裁切照片，讓它填滿不變形 */
+object-position: top;
+    border-radius: 150px; /* ★ 關鍵：數值夠大就會變成膠囊狀/圓形 */
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.1); /* 浮起來的柔和陰影 */
+    border: 5px solid white; /* 加個白框更有質感 */
+}
+
+/* --- 文字區樣式 --- */
+.profile-text h2 {
+    font-size: 28px;
+    color: #4a4a6a;     /* 深藍紫色標題 */
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.profile-text p {
+    font-size: 15px;
+    color: #666;        /* 灰色內文 */
+    line-height: 1.8;   /* 行距拉開，比較好讀 */
+    margin-bottom: 25px;
+}
+
+/* --- 社群連結樣式 --- */
+.link-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #333;
+    font-size: 16px;
+}
+
+/* 模擬圓形圖示 (因為我們暫時沒有圖檔) */
+.icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; /* 變圓形 */
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.icon.red { background-color: #e60023; } /* Pinterest 紅 */
+.icon.black { background-color: #000; }  /* IG 黑 */
+
+/* --- 工作空間情境區 (Workspace Section) --- */
+.workspace-section {
+    /* 設定高度：夠高才看得到漂亮的圖片 */
+    height: 600px;
+    
+    /* 設定背景圖片 */
+    background-image: url('workspace.jpg');
+    background-size: cover;   /* 讓圖片填滿整個區塊 */
+    background-position: center; /* 圖片置中 */
+    
+    /* 排版設定：為了要把色票放在右上角 */
+    display: flex;
+    justify-content: flex-end; /* 靠右對齊 */
+    align-items: flex-start;   /* 靠上對齊 */
+    padding: 50px;             /* 留一點邊距 */
+}
+
+/* --- 色票容器 --- */
+.color-palette {
+    display: flex; /* 讓三個方塊橫向排列 */
+    gap: 20px;     /* 方塊之間的距離 */
+}
+
+/* --- 色票方塊共同設定 --- */
+.swatch {
+    width: 80px;      /* 方塊寬度 */
+    height: 80px;     /* 方塊高度 */
+    background-color: #ddd; /* 預設顏色 */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* 讓方塊浮起來 */
+    transition: transform 0.3s ease; /* 加一點互動動畫 */
+}
+
+/* 滑鼠移上去會微微浮起 */
+.swatch:hover {
+    transform: translateY(-5px);
+}
+
+/* --- 設定三個方塊各自的顏色 (吸取圖片中的配色) --- */
+.swatch.color-1 { background-color: #dbeafe; } /* 淡藍色 */
+.swatch.color-2 { background-color: #cbd5e1; } /* 灰藍色 */
+.swatch.color-3 { background-color: #f3e8ff; } /* 淡粉紫 */
+
+
+/* --- 服務項目區塊 (Services Section) --- */
+.services-section {
+    /* 背景：延續夢幻風格，用淡淡的紫色漸層 */
+    background: linear-gradient(180deg, #f3e7e9 0%, #e3eeff 100%);
+    padding: 80px 20px;
+    text-align: center; /* 讓所有文字和框框都置中 */
+}
+
+/* --- 大標題設定 --- */
+.section-title {
+    font-size: 36px;
+    color: #6a85b6; /* 跟最上面的選單一樣的藍色 */
+    margin-bottom: 20px;
+}
+
+/* --- 內文描述設定 --- */
+.section-desc {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 50px;
+}
+
+/* --- 副標題設定 --- */
+.sub-title {
+    font-size: 28px;
+    color: #8fa0c9; /* 稍微淺一點的藍色 */
+    margin-bottom: 30px;
+}
+
+/* --- 服務項目列表容器 --- */
+.service-list {
+    display: flex;
+    flex-direction: column; /* 由上往下排列 */
+    align-items: center;    /* 水平置中 */
+    gap: 20px;              /* 每個框框之間的距離 */
+}
+
+/* --- 橢圓形膠囊框框 (你的重點需求) --- */
+.service-item {
+    background-color: white; /* ★ 指定白色底色 */
+    color: #555;             /* 文字顏色：深灰色 */
+    
+    width: 100%;             /* 預設寬度 */
+    max-width: 600px;        /* 限制最大寬度，才不會太長 */
+    
+    padding: 15px 30px;      /* 內距：讓文字不要貼邊 */
+    border-radius: 50px;     /* ★ 變成膠囊形狀的關鍵 */
+    
+    /* 加一點陰影，讓白色框框在背景上浮起來，更有層次感 */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    
+    font-size: 16px;
+    transition: transform 0.2s; /* 互動動畫 */
+}
+
+/* 滑鼠移上去的小特效 */
+.service-item:hover {
+    transform: scale(1.02); /* 稍微放大一點點 */
+    color: #6a85b6;         /* 文字變藍色 */
+}
+
+
+/* --- 作品集區塊 (Works Section) --- */
+.works-section {
+    background-color: #fff; /* 背景設為白色，比較乾淨 */
+    padding: 80px 20px;
+    text-align: center;
+}
+
+/* --- 九宮格排版設定 (重點！) --- */
+.works-grid {
+    display: grid; /* 開啟網格模式 */
+    grid-template-columns: repeat(3, 1fr); /* 切成 3 欄，每欄一樣寬 */
+    gap: 30px; /* 圖片之間的間距 */
+    
+    max-width: 1000px; /* 限制最大寬度，避免在大螢幕太散 */
+    margin: 40px auto 0; /* 上面留點空隙，左右置中 */
+}
+
+/* --- 圖片樣式設定 --- */
+.work-item img {
+    width: 100%;        /* 寬度填滿格子 */
+    aspect-ratio: 1 / 1; /* ★ 強制變成正方形 (就像你的參考圖) */
+    object-fit: cover;   /* 如果照片不是正方形，自動裁切中間，不會變形 */
+    
+    border-radius: 12px; /* 圓角效果 */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* 淡淡的陰影 */
+    transition: transform 0.3s ease; /* 設定動畫時間 */
+    cursor: pointer; /* 滑鼠移上去會變手指 */
+}
+
+/* --- 滑鼠移上去的特效 --- */
+.work-item img:hover {
+    transform: scale(1.05); /* 稍微放大一點點 */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* 陰影變深，感覺浮起來 */
+}
+
+
+/* --- 流程區塊 (Process Section) --- */
+.process-section {
+    background-color: #fff; /* 背景白色 */
+    padding: 60px 20px;
+    text-align: center;     /* 文字置中 */
+}
+
+/* --- 標題下方的分隔線 --- */
+.divider {
+    height: 2px;            /* 線的粗細 */
+    width: 100px;           /* 線的長度 */
+    background-color: #eee; /* 淺灰色 */
+    margin: 0 auto 40px;    /* 置中，並與下方保持距離 */
+}
+
+/* --- 卡片容器 --- */
+.process-list {
+    display: flex;
+    flex-direction: column; /* 垂直排列 */
+    align-items: center;    /* 水平置中 */
+    gap: 25px;              /* 卡片之間的距離 */
+}
+
+/* --- 卡片通用設定 --- */
+.process-card {
+    width: 220px;           /* 卡片寬度 */
+    padding: 15px 0;        /* 卡片高度 (透過內距撐開) */
+    
+    font-size: 18px;
+    color: #6a85b6;         /* 文字顏色 (你的品牌藍) */
+    
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* 淡淡的柔和陰影 */
+    transition: transform 0.2s; /* 互動動畫 */
+    cursor: pointer;        /* 滑鼠移上去變手指 */
+}
+
+/* 滑鼠移上去稍微浮起 */
+.process-card:hover {
+    transform: translateY(-5px);
+}
+
+/* --- 個別顏色設定 (模仿你的圖片) --- */
+.process-card.basic {
+    background-color: #eef2fa; /* 最淡的藍色 */
+}
+
+.process-card.standard {
+    background-color: #dbeafe; /* 中間的藍色 */
+}
+
+.process-card.premium {
+    background-color: #f5eef9; /* 淡紫色 */
+}
+
+
+
+/* --- 聯絡資訊區塊 (Contact Section) --- */
+.contact-section {
+    background-color: #fff;
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center; /* 讓內容區塊置中 */
+}
+
+.contact-container {
+    display: flex;        /* 左右排版 */
+    align-items: center;  /* 垂直置中 */
+    gap: 60px;            /* 照片跟文字的距離 */
+    max-width: 900px;     /* 限制最大寬度 */
+    width: 100%;
+}
+
+/* --- 左邊照片 --- */
+.contact-image img {
+    width: 400px;         /* 設定照片大小 */
+    border-radius: 20px;  /* 圓角 */
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.1); /* 質感陰影 */
+}
+
+/* --- 右邊文字區 --- */
+.contact-info {
+    text-align: left; /* 文字靠左 */
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 20px; /* 每一行的間距 */
+    font-family: sans-serif; /* 讓英數字體清楚一點 */
+}
+
+/* --- 補充新的圖示顏色 (Line綠、Email藍) --- */
+.icon.green { background-color: #00b900; } /* Line 的綠色 */
+.icon.blue  { background-color: #6a85b6; } /* 跟主題色一樣的藍 */
+
+
